@@ -82,6 +82,7 @@ def room_view(request, id):
         username = request.user
         if form.is_valid():
              date =form.cleaned_data['date']
+
              Reservation.objects.create(user=username,room=room,spot=date)
         return redirect("/reserve")
 
