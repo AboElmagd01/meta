@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_exempt
 from .form import Dateform
 from .models import Room,Dish,Offer,Reservation
