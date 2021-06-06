@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- MENU SECTION -->
+    <section id="our-menu" class="our-menu">
+        <div class="container">
+            <div class="menu-header">
+                <i class="fas fa-utensils"></i>
+                <h2 class="headline">Our Menu</h2>
+                <p>We introduce what suits the Egyptian taste and integrate between different cultures, by merging different Oriental and western recipes to make new dishes that are a fusion of the Eastern and the Western tastes with the overwhelming Egyptian touch.</p>
+            </div>
+            <div class="menu-table">
+           <div class="row">
+
+            {% for meal in meals %}
+            {% if forloop.counter|divisibleby:2 %}
+                   <div class="col-2">
+
+                            <h3>{{ meal.title }}</h3>
+                            <p>{{ meal.desc }}</p>
+
+                   </div>
+                </div>
+                {% if not forloop.last %}
+                   <div class="row">
+                {% endif %}
+                {% else %}
+                <div class="col-2">
+
+                            <h3>{{ meal.title }}</h3>
+                            <p>{{ meal.desc }}</p>
+
+                   </div>
+            {% endif %}
+            {% endfor %}
+                        </div>
+            <div class="menu-gallery">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="../../static/Teplates/images/menu-gallery-1.jpg" alt="menu-image">
+                    </div>
+                    <div class="col-3">
+                        <img src="../../static/Teplates/images/menu-gallery-2.jpg" alt="menu-image">
+                    </div>
+                    <div class="col-3">
+                        <img src="../../static/Teplates/images/menu-gallery-3.jpg" alt="menu-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

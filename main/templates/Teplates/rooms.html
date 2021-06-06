@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- ROOMS LIST -->
+    <section id="rooms-list" class="rooms-list">
+        <div class="container container-medium">
+            <div class="row row-2">
+                <h2>Rooms</h2>
+                <select onchange="if (this.value === '-1') vertical();if (this.value === '1' ) grid()">
+                    <option value="1">Grid View</option>
+                    <option value="-1">Vertical View</option>
+                </select>
+            </div>
+                    <div class="row">
+
+            {% for room in rooms %}
+            {% if forloop.counter|divisibleby:2 %}
+                   <div class="col-2">
+                    <div class="room-image">
+                        <img src={{ room.src }} alt="room">
+                    </div>
+                    <div class="room-info">
+                        <div>
+                            <h4>{{ room.title }}</h4>
+                            <p>{{ room.desc }}</p>
+                            <p class="price"><span>${{ room.price }}</span> / night</p>
+                            <a href="{% url 'room_view' room.id %}">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                {% if not forloop.last %}
+                   <div class="row">
+                {% endif %}
+                {% else %}
+                      <div class="col-2">
+                    <div class="room-image">
+                        <img src={{ room.src }} alt="room">
+                    </div>
+                    <div class="room-info">
+                        <div>
+                            <h4>{{ room.title }}</h4>
+                            <p>{{ room.desc }}</p>
+                            <p class="price"><span>${{ room.price }}</span> / night</p>
+                            <a href="{% url 'room_view' room.id %}">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% endfor %}
+                        </div>
+</div>
+   </section>
+        <!-- Table SECTION -->
+        <section style="padding-left: 100px">
+        <h2 class="headline" style="text-align: center; color: var(--main-color);padding-bottom: 20px">Available Dates</h2>
+        <div class="timetable">
+             <div class="week-names">
+               <div>saturday</div>
+               <div>sunday</div>
+               <div>monday</div>
+               <div>tuesday</div>
+               <div>wednesday</div>
+               <div>thursday</div>
+               <div>friday</div>
+              </div>
+             <div class="rooms-avail">
+                 <div>Room 1</div>
+                 <div>Room 2</div>
+                 <div>Room 3</div>
+                 <div>Room 4</div>
+                  <div>Room 5</div>
+                  <div>Room 6</div>
+             </div>
+
+
+            <div class="content">
+            {% for room in rooms %}
+                {% if room.avaliable %}
+               <div><div class="selected"></div>
+               </div>
+               <div></div>
+               <div class="selected"></div>
+               <div></div>
+               <div class="selected" ><div></div></div>
+               <div></div>
+               <div class="selected"></div>
+                {% else %}
+                    <div><div></div>
+             </div>
+             <div></div>
+             <div ></div>
+             <div></div>
+             <div ><div></div></div>
+              <div></div>
+              <div ></div>
+                {% endif %}
+
+            {% endfor %}
+
+
+  </div>
+</div>
+</section>{% endblock %}

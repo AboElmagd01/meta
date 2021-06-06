@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+   <section id="rooms-list" class="rooms-list" >
+   <div class="container">
+       {% for reserve in reserves %}
+
+
+    <div class="row" style="display: inline">
+    <div class="col-2">
+                    <div class="room-info" style="text-align: center">
+                        <div>
+                            <h2>{{ reserve.user }}</h2>
+                            <p>{{ reserve.room }}</p>
+{#                            <div class="room-image">#}
+{#                                <img style="min-width: 900px;align-self: center" src="{{ room.src }} " alt="room">#}
+{#                            </div>#}
+                            <p class="price"><span>${{ reserve.spot }}</span>  night</p>
+                            <ul>
+                                <li><p>ID: {{ reserve.id }}</p></li>
+                                <li><p></p></li>
+                                <li><p></p></li>
+                            </ul>
+
+                               <div class="button-container container"><a style="border: none" href="{% url 'reserve_view' reserve.id %}"><button  class="btn btn-white">Cancel</button></a></div>
+
+
+                        </div>
+                    </div>
+                </div>
+    </div>
+              {% endfor %}
+
+       </div>
+   </section>
+
+
+
+
+
+{% endblock %}

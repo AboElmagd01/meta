@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramids</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="{% static '/Teplates/style.css' %}"></head>
+<body>
+    <!-- HEADER -->
+        <div class="container" style="padding-top: 1rem">
+            <nav class="navbar">
+                <a class="logo" href="/">Pyramids</a>
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fas fa-bars" id="open"></i>
+                    <i class="fas fa-times" id="close"></i>
+                </label>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/rooms" class="nav-link">Rooms</a></li>
+                    <li class="nav-item"><a href="/restaurant" class="nav-link">Restaurant</a></li>
+                    <li class="nav-item"><a href="/spa" class="nav-link">Spa</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="/offers" class="nav-link">Offers</a></li>
+                    <li class="nav-item"><a href="/map" class="nav-link">Map</a></li>
+                    <li class="nav-item"><a href="/explore" class="nav-link">Explore</a></li>
+                    <li class="nav-item"><a href="/feedback" class="nav-link">FeedBack</a></li>
+                    <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+                     {% if user.is_authenticated %}
+                         <li class="nav-item dropdown">
+                              <button class="dropbtn">Account<i class="fa fa-caret-down"></i></button>
+                              <div class="dropdown-content">
+
+{#                                  Phase2#}
+
+                                <a href="/reserve" class="nav-link">Reservations</a>
+                                <a href="/logout" class="nav-link">Log Out</a>
+                          </div>
+                        </li>
+                    {% else %}
+                        <li class="nav-item dropdown">
+                              <button class="dropbtn">Join<i class="fa fa-caret-down"></i></button>
+                              <div class="dropdown-content">
+                                <a href="/registration" class="nav-link">Register</a>
+                                <a href="/login" class="nav-link">Log in</a>
+                          </div>
+                        </li>
+                    {% endif %}
+
+                    <li class="nav-item"><a href="/rooms" class="nav-link book-btn">Book</a></li>
+                </ul>
+                  <div style="width: 100px; padding-left: 150px">
+                      <select id="theme-selector" class="nav-list" >
+                         <option class="nav-link" value="default">Default</option>
+                         <option class="nav-item" value="dark">Blue mode</option>
+                         <option class="nav-item" value="black">Dark mode</option>
+                         <option class="nav-item" value="bl">Purple mode</option>
+                        </select>
+                     </div>
+            </nav>
+        </div>
+
+
+    
+    {% block content %}
+    
+    {% endblock %}
+
+    <footer>
+        <div class="container">
+            <div class="back-to-top">
+                <a href="#hero"><i class="fas fa-chevron-up"></i></a>
+            </div>
+            <div class="footer__content row">
+                <div class="col-3">
+                    <h4>About</h4>
+                    <p>The Pyramids’s legend dates back to 1865, when The Cairo, Egypt opened as Africa’s first 'Grand Hotel'. 1865 is Cairo Hospitality Group's way of expressing appreciation for valuable guest support to our collection of hotels.</p>
+                </div>
+                <div class="col-3">
+                    <h4>Payment Methods</h4>
+                    <p>Pay any way you choose, we support all payment options</p>
+                    <ul class="payment-methods">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-paypal"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-cc-visa"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-cc-mastercard"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-apple-pay"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <h4>Get Social</h4>
+                    <p>Follow us on social media and keep in touch with Pyramids.</p>
+                    <ul class="social-icons">
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fab fa-tripadvisor"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src =" {% static 'Teplates/app.js' %}"></script>
+</body>
+
+</html>

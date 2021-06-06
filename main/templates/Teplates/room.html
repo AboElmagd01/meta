@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+    <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+</head>
+   <section id="rooms-list" class="rooms-list" >
+   <div class="container">
+    <div class="row" style="display: inline">
+    <div class="col-2">
+                    <div class="room-info" style="text-align: center">
+                        <div>
+                            <h2>{{ room.title }}</h2>
+                            <p>{{ room.desc }}</p>
+{#                            <div class="room-image">#}
+{#                                <img style="min-width: 900px;align-self: center" src="{{ room.src }} " alt="room">#}
+{#                            </div>#}
+                            <p class="price"><span>${{ room.price }}</span> / night</p>
+                            <ul>
+                                <li><p>ID: {{ room.id }}</p></li>
+                                <li><p>Available: {{ room.avaliable }}</p></li>
+                                <li><p>Type: {{ room.type }}</p></li>
+                            </ul>
+                                   <form action="" method="post" name="rese">
+                                     {% csrf_token %}
+                                           <div style="padding-top: 50px" class="nav-list"><p style="padding-right: 20px;">Date: </p>{{ form.date }}</div>
+                                       <div class="button-container container">
+                                           <a style="border: none" href="/"><button type="submit" class="btn btn-white">Book Now</button></a>
+                                          </div>
+                                   </form>
+
+                        </div>
+                    </div>
+                </div>
+    </div>
+       </div>
+   </section>
+
+
+
+
+
+{% endblock %}

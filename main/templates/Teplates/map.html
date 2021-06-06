@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class="headline" style="text-align: center;color: var(--main-color)"> Find Local Hotels in {{ location }}</h2>
+
+{% if location == "Cairo"%}
+<div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=hotel+()&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="600" frameborder="0"></iframe>
+    </div>
+    {% elif location == "Giza" %}
+    <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Hotel,%20Giza+()&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="600" frameborder="0"></iframe></div>
+    {% elif location == "Luxor" %}
+    <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Hotel,%20Luxor+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="600" frameborder="0"></iframe></div>
+    {% elif location == "Alex" %}
+    <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Hotel,%20Alexandria+()&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="600" frameborder="0"></iframe></div>
+    {% elif location == "Sharm" %}
+    <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Hotel,%20sharm+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="600" frameborder="0"></iframe></div>
+
+
+{% endif %}
+
+<div class="container" style="padding-top: 50px;color: var(--main-color)">
+    <h2>Choose your current city:</h2>
+    <img src="../../static/Teplates/images/Word_Art-removebg-preview.png" usemap="#workmap" alt="Cities">
+    <map name="workmap">
+  <area shape="rect" coords="140,80,490,270" alt="Cairo" href="/map">
+  <area shape="rect" coords="205,20,430,75" alt="Alex" href="/mapAlex">
+  <area shape="rect" coords="500,143,640,243" alt="Giza" href="/mapGiza">
+  <area shape="rect" coords="34,88,139,176" alt="Luxor" href="/mapLuxor">
+  <area shape="rect" coords="190,270,400,314" alt="Sharm" href="/mapSharm">
+
+</map>
+</div>
+
+{% endblock %}
