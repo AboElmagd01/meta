@@ -75,6 +75,7 @@ select  {
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
   margin-bottom: 10px;
+    cursor: pointer;
 }
 
 fieldset {
@@ -134,7 +135,9 @@ label.light {
           <legend><span class="number">1</span>Your basic info</legend>
           <label for="fname">Full Name:</label>
           <input type="text" id="fname" name="fna">
-
+              {% if text == 0 %}
+                  <p style="color: darkred">Invalid Username</p>
+         {% endif %}
           <label for="name">Username:</label>
           <input type="text" id="name" name="user_name">
 

@@ -155,8 +155,7 @@ height: auto; width:auto;}
   </head>
   <!-- Feedback Form -->
 
-  <form action="" method="post">
-
+  <form action="" method="post">{% csrf_token %}
     <h1>Feedback</h1>
     <div class="halves">
       <div class="formfeed">

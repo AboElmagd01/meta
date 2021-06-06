@@ -733,6 +733,7 @@ footer {
   z-index: 2;
   font-weight: bold;
   font-size: 20px;
+      cursor: pointer;
 }
 .login .container .login-form form button[type=submit]:hover::after {
   opacity: 1;
