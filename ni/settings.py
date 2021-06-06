@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-so+8rahw&ypoc@0$3dw)6@typ8&^5-3$ngn_!$3@+av#mise2%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://pyramidshotel.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
