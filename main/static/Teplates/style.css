@@ -409,7 +409,7 @@ label #close {
 }
 
 .hero {
-    background-image: linear-gradient(to right bottom,  var(--secondry-black), rgba(0,0,0,0.8) ), url("images/hero-bg.jpg");
+    background-image: linear-gradient(to right bottom,  var(--secondry-black), rgba(0,0,0,0.8) ), url("../../static/Teplates/images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     height: calc(100vh - 7.5rem);
