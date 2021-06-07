@@ -65,14 +65,10 @@
                <div>friday</div>
               </div>
              <div class="rooms-avail">
-                 <div>Room 1</div>
-                 <div>Room 2</div>
-                 <div>Room 3</div>
-                 <div>Room 4</div>
-                  <div>Room 5</div>
-                  <div>Room 6</div>
+                 {% for room in rooms %}
+                     <div>{{ room.title }}</div>
+                 {% endfor %}
              </div>
-
 
             <div class="content">
             {% for room in rooms %}
@@ -87,17 +83,15 @@
                <div class="selected"></div>
                 {% else %}
                     <div><div></div>
-             </div>
-             <div></div>
-             <div ></div>
-             <div></div>
-             <div ><div></div></div>
-              <div></div>
-              <div ></div>
+                     </div>
+                     <div></div>
+                     <div ></div>
+                     <div></div>
+                     <div ><div></div></div>
+                      <div></div>
+                      <div ></div>
                 {% endif %}
-
             {% endfor %}
-
 
   </div>
 </div>
