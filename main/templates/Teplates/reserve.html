@@ -1,39 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-   <section id="rooms-list" class="rooms-list" >
+<section id="rooms-list" class="rooms-list" >
    <div class="container">
-       <h2>Reservations Data:</h2>
+     <h2>Reservations Data:</h2>
 
        {% for reserve in reserves %}
 
+            <div class="row" style="display: inline">
+              <div class="col-2">
+                <div class="room-info" style="text-align: center">
+                    <div>
+                        <h3 style="font-size: 32px">Order #{{ forloop.counter }}</h3>
+                        <p>Customer Name: <span>{{ reserve.user }}</span></p>
+                        <p>Room: <span>{{ reserve.room }}</span> <a href="{% url 'room_view' reserve.room.id %}">Details</a></p>
+                        <p class="price">Date: <span>{{ reserve.spot }}</span></p>
+                        <ul>
+                            <li><p>ID: {{ reserve.id }}</p></li>
+                        </ul>
+                        <div class="button-container container"><a style="border: none" href="{% url 'reserve_view' reserve.id %}"><button  class="btn btn-white">Cancel</button></a></div>
 
-    <div class="row" style="display: inline">
-    <div class="col-2">
-                    <div class="room-info" style="text-align: center">
-                        <div>
-                            <h3 style="font-size: 32px">Order #{{ forloop.counter }}</h3>
-                            <p>Customer Name: <span>{{ reserve.user }}</span></p>
-                            <p>Room: <span>{{ reserve.room }}</span> <a href="{% url 'room_view' reserve.room.id %}">Details</a></p>
-                            <p class="price">Date: <span>{{ reserve.spot }}</span></p>
-                            <ul>
-                                <li><p>ID: {{ reserve.id }}</p></li>
-
-                            </ul>
-
-                               <div class="button-container container"><a style="border: none" href="{% url 'reserve_view' reserve.id %}"><button  class="btn btn-white">Cancel</button></a></div>
-
-
-                        </div>
                     </div>
                 </div>
-    </div>
-              {% endfor %}
+              </div>
+            </div>
 
-       </div>
-   </section>
+       {% endfor %}
 
-
-
-
+   </div>
+</section>
 
 {% endblock %}

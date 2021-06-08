@@ -10,6 +10,7 @@
         <h1>Login to your account</h1>
         <div class="login-form">
           <form action="/login/" name="login" method="post">
+          {% csrf_token %}
               {% if text == 0%}
                   <h3 style="color: darkred">Invalid Username or Password</h3>
               {% endif %}

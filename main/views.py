@@ -67,7 +67,6 @@ def feed(request):
     return render(request, "Teplates/feedBack.html")
 
 
-@csrf_exempt
 def login_v(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -82,7 +81,6 @@ def login_v(request):
         return render(request, "Teplates/login.html")
 
 
-@csrf_exempt
 def register(request):
     if request.method == 'POST':
         username = request.POST.get("user_name")

@@ -1,6 +1,6 @@
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path
 from main.views import mainApp,map,rooms,contact,explore,spa,resta,feed,login_v,register,offers,about,mapAlex,mapGiza,mapLuxor,mapSharm,logout_view,room_view,reservation_view,deleteview
 from django.conf import settings
 

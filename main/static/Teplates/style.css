@@ -805,6 +805,333 @@ color: var(--main-color);
 .login .container .forget-pass a:hover::after {
   opacity: 1;
 }
+
+
+
+
+
+
+
+
+
+
+#offer p {margin-top: 10px;}
+
+   #offer    h1 {padding: 19px 39px 18px 39px;
+        text-align: center;
+          font-size: 47px;
+          margin-top: 20px;
+      color:  var(--main-color)}
+
+     #offer      li {margin-bottom: 10px;}
+
+       .btttn {
+        padding: 19px 39px 18px 39px;
+        color: #FFF;
+        background-color:  var(--main-color);
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        border-radius: 5px;
+        width: 50%;
+        border: 1px solid  var(--main-color);
+        border-width: 1px 1px 3px;
+        box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+
+   #offer    fieldset {
+        margin-bottom: 30px;
+        border: none;
+      }
+
+   #offer    legend {
+        font-size: 2.1em;
+        margin-bottom: 10px;
+      }
+
+
+   #offer    label {
+        display: block;
+        margin-bottom: 8px;
+          font-size: 18px;
+      }
+
+   #offer    label.light {
+        font-weight: 300;
+        display: inline;
+
+      }
+  #offer     .col-md-6 {margin: 30px;}
+  #offer     .mar-b {
+      	margin-bottom: 10px;
+      }
+
+      .Offer-txt {
+          font-size: 18px;
+      	margin: 0px 0px 0px;
+          color: var(--main-color);
+      }
+
+      	.Offer-txt h3 {
+      		color:  var(--main-color);
+      		font-weight: bold;
+      		margin-bottom: 30px;
+      		position: relative;
+      	}
+
+      		.Offer-txt h3::after {
+      			background-color:  var(--main-color);
+      			position: absolute;
+      			content: '';
+      			width: 40%;
+      			height: 4px;
+      			left: 0;
+      			bottom: -10px;
+      		}
+
+      	.Offer-txt.terms {
+      		margin-bottom: 35px;
+      	}
+
+      		.Offer-txt.terms ul li {
+      			list-style: circle;
+      			margin-left: 20px;
+      		}
+         /*slideshow*/
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+#offer .dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+#offer .active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+#offer  .fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#reg *, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+
+#reg form {
+  max-width: 650px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: transparent;
+  border-radius: 8px;
+}
+
+#reg h1 {
+  padding-top: 20px;
+  margin: 0 0 30px 0;
+  text-align: center;
+  font-size: 32px;
+    color: var(--main-color);
+}
+
+#reg input[type="text"],
+#reg input[type="password"],
+#reg input[type="date"],
+#reg input[type="datetime"],
+#reg input[type="email"],
+#reg input[type="number"],
+#reg input[type="search"],
+#reg input[type="tel"],
+#reg input[type="time"],
+#reg input[type="url"],
+#reg textarea,
+#reg #job {
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: rgba(57, 57, 57, 0.07);
+  color: var(--main-color);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+#reg input[type="radio"],
+#reg input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+#reg select  {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+.btttn {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color:  var(--main-color);
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #455d58;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#reg fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+#reg legend {
+  font-size: 2.1em;
+  margin-bottom: 10px;
+}
+
+#reg label {
+  display: block;
+  margin-bottom: 8px;
+    font-size: 18px;
+}
+
+#reg label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+#reg .number {
+  background-color:  var(--main-color);
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+
+
+
+#reg .halves {display: flex; flex-flow: row wrap;
+height: auto; width:auto;}
+#reg .formfeed {width: 300px;  margin-top:auto; margin-bottom: auto;color: var(--main-color)}
+#reg .image {display: flex ;width:150px; ;height:640px; margin:30px;}
+ #reg  .number {
+    background-color:  var(--main-color);
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 100%;
+  }
+#reg .rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+#reg .rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+#reg .rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+#reg .rate:not(:checked) > label:before {
+    content: '★ ';
+}
+#reg .rate > input:checked ~ label {
+    color: #ffc700;
+}
+#reg .rate:not(:checked) > label:hover,
+#reg .rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+#reg .rate > input:checked + label:hover,
+#reg .rate > input:checked + label:hover ~ label,
+#reg .rate > input:checked ~ label:hover,
+#reg .rate > input:checked ~ label:hover ~ label,
+#reg .rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+#reg @media screen and (min-width: 480px) {
+
+   form {
+    max-width: 680px;
+  }
+
+}
+
 /*                    ROOMS PAGE                   */
 
 .rooms-list {
