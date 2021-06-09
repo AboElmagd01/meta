@@ -60,13 +60,13 @@
                <div>{{ date }} </div>
                   {% endfor %}
               </div>
-             <div class="rooms-avail">
+             <div class="rooms-avail" style="grid-template-rows: repeat({{ rooms.count }}, 1fr);">
                  {% for room in rooms %}
                      <div>{{ room.title }}</div>
                  {% endfor %}
              </div>
 
-            <div class="content">
+            <div class="content" style="grid-template-rows: repeat({{ rooms.count }}, 1fr)">
             {% for room in rooms %}
                 {% for  char in room.notavailable %}
                  {% if char == 'T' %}
@@ -75,7 +75,6 @@
                      <div></div>
                  {% endif %}
                 {% endfor %}
-
             {% endfor %}
 
   </div>
