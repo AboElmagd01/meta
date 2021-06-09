@@ -5,6 +5,7 @@ from .models import Room, Dish, Offer, Reservation
 from django.contrib.auth import login, authenticate, logout
 # from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+import datetime
 
 
 # Create your views here.
@@ -55,7 +56,19 @@ def resta(request):
 
 
 def rooms(request):
-    return render(request, "Teplates/rooms.html", {'rooms': Room.objects.all()})
+    dates = []
+    for i in range(7):
+        date = datetime.datetime.now() + datetime.timedelta(days=i)
+        date_str = date.strftime("%A, %d/%m")
+        dates.append(date_str)
+        rooms_not =Room.objects.filter(reservation__spot=date)
+        if rooms_not.count() > 0:
+             for room in rooms_not:
+                x = list(room.notavailable)
+                x[i] ='F'
+                room.notavailable  = ''.join([str(elem) for elem in x])
+                room.save()
+    return render(request, "Teplates/rooms.html", {'rooms': Room.objects.all(),'dates':dates})
 
 
 def offers(request):
@@ -134,5 +147,12 @@ def reservation_view(request):
 def deleteview(request, id):
     if not request.user.is_authenticated:
         return redirect('/login')
-    Reservation.objects.filter(id=id).delete()
+    r = Room.objects.get(reservation__id=id)
+    v =Reservation.objects.get(id=id)
+    day = int(v.spot.strftime("%w"))-int(datetime.date.today().strftime("%w"))
+    x = list(r.notavailable)
+    x[day] = 'T'
+    r.notavailable = ''.join([str(elem) for elem in x])
+    r.save()
+    v.delete()
     return redirect('/reserve')

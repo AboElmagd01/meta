@@ -56,13 +56,9 @@
         <h2 class="headline" style="text-align: center; color: var(--main-color);padding-bottom: 20px">Available Dates</h2>
         <div class="timetable">
              <div class="week-names">
-               <div>saturday</div>
-               <div>sunday</div>
-               <div>monday</div>
-               <div>tuesday</div>
-               <div>wednesday</div>
-               <div>thursday</div>
-               <div>friday</div>
+                 {% for date in dates %}
+               <div>{{ date }} </div>
+                  {% endfor %}
               </div>
              <div class="rooms-avail">
                  {% for room in rooms %}
@@ -72,25 +68,14 @@
 
             <div class="content">
             {% for room in rooms %}
-                {% if room.avaliable %}
-               <div><div class="selected"></div>
-               </div>
-               <div></div>
-               <div class="selected"></div>
-               <div></div>
-               <div class="selected" ><div></div></div>
-               <div></div>
-               <div class="selected"></div>
-                {% else %}
-                    <div><div></div>
-                     </div>
+                {% for  char in room.notavailable %}
+                 {% if char == 'T' %}
+                      <div  class="selected" ></div>
+                     {% else %}
                      <div></div>
-                     <div ></div>
-                     <div></div>
-                     <div ><div></div></div>
-                      <div></div>
-                      <div ></div>
-                {% endif %}
+                 {% endif %}
+                {% endfor %}
+
             {% endfor %}
 
   </div>
