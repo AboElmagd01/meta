@@ -13,7 +13,8 @@
                         <h3 style="font-size: 32px">Order #{{ forloop.counter }}</h3>
                         <p>Customer Name: <span>{{ reserve.user }}</span></p>
                         <p>Room: <span>{{ reserve.room }}</span> <a href="{% url 'room_view' reserve.room.id %}">Details</a></p>
-                        <p class="price">Date: <span>{{ reserve.spot }}</span></p>
+                        <p class="price">From: <span>{{ reserve.spot }}</span></p>
+                        <p class="price">To: <span>{{ reserve.to }}</span></p>
                         <ul>
                             <li><p>ID: {{ reserve.id }}</p></li>
                         </ul>

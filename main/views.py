@@ -61,14 +61,20 @@ def rooms(request):
         date = datetime.datetime.now() + datetime.timedelta(days=i)
         date_str = date.strftime("%A, %d/%m")
         dates.append(date_str)
-        rooms_not =Room.objects.filter(reservation__spot=date)
+        rooms_not = Room.objects.filter(reservation__spot=date)
         if rooms_not.count() > 0:
-             for room in rooms_not:
+            for room in rooms_not:
                 x = list(room.notavailable)
-                x[i] ='F'
-                room.notavailable  = ''.join([str(elem) for elem in x])
+                v = Reservation.objects.get(room=room, spot=date)
+                days = int(v.to.strftime("%d")) - int(datetime.date.today().strftime("%d")) + 1
+                j = i
+                while j < days and j < 7:
+                    x[j] = 'F'
+                    print(x)
+                    j += 1
+                room.notavailable = ''.join([str(elem) for elem in x])
                 room.save()
-    return render(request, "Teplates/rooms.html", {'rooms': Room.objects.all(),'dates':dates})
+    return render(request, "Teplates/rooms.html", {'rooms': Room.objects.all(), 'dates': dates})
 
 
 def offers(request):
@@ -125,16 +131,36 @@ def room_view(request, id):
         room = Room.objects.get(id=id)
         username = request.user
         if form.is_valid():
-            date = form.cleaned_data['date']
-            rese = Reservation.objects.filter(spot=date,room=room)
-            if rese.count()>0:
-                return render(request, "Teplates/room.html", {'room': room, 'form': form,'text':0})
-            Reservation.objects.create(user=username, room=room, spot=date)
+            fdate = form.cleaned_data['fromdate']
+            tdate = form.cleaned_data['todate']
+            filter_params = dict(spot=fdate,
+                                 to=tdate)
+            # checking if Exists
+            rese = Reservation.objects.filter(**filter_params, room=room).exists()
+            # Validate date
+            valid_date = fdate > tdate
+            if rese or valid_date:
+                return render(request, "Teplates/room.html", {'room': room, 'form': form, 'text': 0})
+            # Checking Intervals
+            reseQ = Reservation.objects.filter(room=room)
+            dont = False
+            for re in reseQ:
+                if re.spot <= fdate and re.to >= tdate:
+                    dont = True
+                elif re.spot >= fdate and re.to <= tdate:
+                    dont = True
+                elif re.spot <= fdate <= re.to:
+                    dont = True
+                elif re.spot <= tdate <= re.to:
+                    dont = True
+            if rese or dont:
+                return render(request, "Teplates/room.html", {'room': room, 'form': form, 'text': 0})
+            Reservation.objects.create(user=username, room=room, spot=fdate, to=tdate)
         return redirect("/reserve")
 
     else:
         form = Dateform()
-        return render(request, "Teplates/room.html", {'room': room, 'form': form,'text':1})
+        return render(request, "Teplates/room.html", {'room': room, 'form': form, 'text': 1})
 
 
 def reservation_view(request):
@@ -148,10 +174,14 @@ def deleteview(request, id):
     if not request.user.is_authenticated:
         return redirect('/login')
     r = Room.objects.get(reservation__id=id)
-    v =Reservation.objects.get(id=id)
-    day = int(v.spot.strftime("%w"))-int(datetime.date.today().strftime("%w"))
+    v = Reservation.objects.get(id=id)
+    day = int(v.spot.strftime("%w")) - int(datetime.date.today().strftime("%w"))
+    days = int(v.to.strftime("%d")) - int(datetime.date.today().strftime("%d")) + 1
     x = list(r.notavailable)
-    x[day] = 'T'
+    j = day
+    while j < days and j < 7:
+        x[j] = 'T'
+        j += 1
     r.notavailable = ''.join([str(elem) for elem in x])
     r.save()
     v.delete()

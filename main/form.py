@@ -1,4 +1,5 @@
 from django import forms
 
 class Dateform(forms.Form):
-    date = forms.DateField(widget=forms.SelectDateWidget,label="date")
+    fromdate = forms.DateField(widget=forms.SelectDateWidget,label="date")
+    todate = forms.DateField(widget=forms.SelectDateWidget,label="date")

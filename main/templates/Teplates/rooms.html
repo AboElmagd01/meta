@@ -70,9 +70,9 @@
             {% for room in rooms %}
                 {% for  char in room.notavailable %}
                  {% if char == 'T' %}
-                      <div  class="selected" ></div>
+                      <div ></div>
                      {% else %}
-                     <div></div>
+                     <div class="selected"></div>
                  {% endif %}
                 {% endfor %}
             {% endfor %}
