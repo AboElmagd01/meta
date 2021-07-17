@@ -53,7 +53,7 @@ Activate Virtual Environment
 ```
 Install Requirment Packages
 ```sh
- pip install -r requirement.txt
+ pip install -r requirements.txt
 ```
 Migrate Database :
 ```sh
@@ -80,7 +80,7 @@ Activate Virtual Environment
 ```
 Install Requirment Packages
 ```sh
- pip install -r requirement.txt
+ pip install -r requirements.txt
 ```
 Migrate Database :
 ```sh
