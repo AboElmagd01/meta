@@ -1,8 +1,9 @@
 How to Setup in Windows/MAC/Linux:
 
-    Clone this Project git clone https://github.com/AboElmagd01/meta.git
+    # Clone this Project git clone 
+    https://github.com/AboElmagd01/meta.git
     
-    Go to Project Directory cd meta
+    # Go to Project Directory cd meta
     
     Create a Virtual Environment :-
         for Windows python -m venv env
