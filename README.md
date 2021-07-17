@@ -1,5 +1,5 @@
 # Pyramids Hotel
-## _Hotel website and managment system_
+## _Hotel website and Booking system_
 
 
 
