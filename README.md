@@ -16,10 +16,6 @@ Pyramids is a cloud-enabled, mobile-ready, Django-powered Web application.
 - Multiple Themes
 
 
-This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
-
 ## Tech
 
 - Django - Web Framewoek
