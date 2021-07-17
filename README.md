@@ -57,6 +57,7 @@ Install Requirment Packages
 ```
 Migrate Database :
 ```sh
+  py manage.py makemigrations
   py manage.py migrate
 ```
 Create SuperUser :
@@ -84,6 +85,7 @@ Install Requirment Packages
 ```
 Migrate Database :
 ```sh
+  python3 manage.py makemigrations
   python3 manage.py migrate
 ```
 Create SuperUser :
