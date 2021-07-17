@@ -13,7 +13,7 @@ Pyramids is a cloud-enabled, mobile-ready, Django-powered Web application.
 - Authorization feature to limit unrestrictive access
 - Booking system
 - Admin panel
-
+- Multiple Themes
 
 
 This text you see here is *actually- written in Markdown! To get a feel
@@ -22,7 +22,7 @@ watch the results in the right.
 
 ## Tech
 
-- Django - Web Application Framewoek
+- Django - Web Framewoek
 - Pycharm - Python IDE
 - HTML/CSS - Creating and Styling Web pages 
 - JavaScript - Interactive content and Form validation
