@@ -1,14 +1,16 @@
 How to Setup in Windows/MAC/Linux:
 
     # Clone this Project git clone 
+    ```
     https://github.com/AboElmagd01/meta.git
-    
+    ```
     # Go to Project Directory cd meta
     
     Create a Virtual Environment :-
+    ```
         for Windows python -m venv env
         for Linux/Mac python3 -m venv env
-        
+     ```
     Activate Virtual Environment .\env\Scripts\activate
     
     Install Requirment Packages pip install -r requirement.txt
