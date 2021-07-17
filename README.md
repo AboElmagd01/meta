@@ -49,7 +49,7 @@ Create a Virtual Environment :
 ```
 Activate Virtual Environment 
 ```sh
- .\env\Scripts\activate
+ . \env\Scripts\activate
 ```
 Install Requirment Packages
 ```sh
@@ -76,7 +76,7 @@ Create a Virtual Environment :
 ```
 Activate Virtual Environment 
 ```sh
- .\env\Scripts\activate
+ source mypython/bin/activate
 ```
 Install Requirment Packages
 ```sh
